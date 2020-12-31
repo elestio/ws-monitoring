@@ -1,5 +1,5 @@
 # ws-monitoring
-A simple & lightweight realtime monitoring web UI over Websockets.
+A simple & lightweight realtime monitoring web UI + server in Node.js
 
 ![ws-monitoring animated gif](https://cdn.terasp.net/CDN/ws-monitoring.gif "ws-monitoring")
 
