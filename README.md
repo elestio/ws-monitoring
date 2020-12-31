@@ -81,9 +81,6 @@ Run with helm
 
     helm upgrade --install ws-monitoring --namespace ws-monitoring helm/
 
-&nbsp;
-# Usage
-
 
 
 
