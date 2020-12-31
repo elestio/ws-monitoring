@@ -12,19 +12,6 @@ Features:
 
 &nbsp;
 
-# Quickstart with Docker
-
-Run once: 
-
-    docker pull elestio/ws-monitoring
-    docker run -p 3000:3000 -it elestio/ws-monitoring
-
-or Run as a docker service:
-
-    docker run --name ws-monitoring -d --restart always -p 3000:3000 -it elestio/ws-monitoring
-
-Then open http://yourIP:3000/ in your browser
-
 &nbsp;
 # Requirements
 
