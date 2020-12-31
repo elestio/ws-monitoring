@@ -51,7 +51,7 @@ Clone this repo then install NPM dependencies for ws-monitoring:
 
 &nbsp;
 
-## configure a security token in appconfig.json (Mandatory)
+## configure a security token in appconfig.json (Mandatory step)
 To protect the access to the dashboard you have to configure a security token (any random string) in appconfig.json
 
     "websocketEndpoints": {
@@ -63,8 +63,7 @@ To protect the access to the dashboard you have to configure a security token (a
       "token": "XXXXXXXXXXXXXXXXXXXXXXXXXX"
     }
 
-Replace XXXXXXXXXXXXXXXXXXXXXXXXXX by any random string (like a guid: https://www.guidgenerator.com/)
-then save the file
+Replace XXXXXXXXXXXXXXXXXXXXXXXXXX by any random string (like a guid: https://www.guidgenerator.com/) then save the file.
 
 
 # Run ws-monitoring
