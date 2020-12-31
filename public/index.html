@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>
+		CloudGate Deploy
+	</title>
+	<meta name="description" content="Cloudgate server test page">
+    <style>
+        body 
+        {
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <H1>Welcome to ws-monitoring</H1>
+    <span>
+        If you see this page, ws-monitoring is working.
+    </span>
+    <br/><br/>
+    Channel: <br/>
+    <input id='channel' type='text' value='global' style='width: 300px; height: 40px;'/>
+    <br/><br/>
+    Token: <br/>
+    <input id='token' type='text' value='' placeholder="your API token ..." style='width: 300px; height: 40px;' />
+    <br/><br/>
+    <button onclick='openChannel()'>Open Channel</button>
+
+    <script>
+        function openChannel(){
+            var channel = document.getElementById("channel").value;
+            var token = document.getElementById("token").value;
+            window.location.href = '/ws-monitoring.html?token=' + token + '&channel=' + channel;
+        }
+        
+    </script>
+</body>
+
+</html>

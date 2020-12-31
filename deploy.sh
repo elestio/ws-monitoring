@@ -1,0 +1,1 @@
+ssh root@xxx.xxx.xxx.xxx "cd ws-monitoring && git pull && pm2 reload ws-monitoring";
