@@ -6,6 +6,7 @@ A simple & lightweight realtime monitoring web UI + server in Node.js
 Features:
  - Super light real time monitoring tool / Small CPU/RAM Usage
  - Easy to run once or as a service
+ - Click on tiles to enable or disable graphing for a metric
  - REST & Websocket APIs (soon)
  - Responsive design
  - Embeddable
