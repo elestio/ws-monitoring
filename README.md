@@ -62,9 +62,11 @@ Finally we can start WS-MONITORING Server one-time:
     
     ./run.sh
 
-or 
+or run as a service with pm2
 
-    npm run server
+    npm install -g pm2
+    pm2 start run.sh --name ws-monitoring
+    pm2 save
 
 ## Run with docker (local version for dev)
 Run just once
@@ -82,5 +84,10 @@ Run with helm
     helm upgrade --install ws-monitoring --namespace ws-monitoring helm/
 
 
+## Once running, open in your browser
+    
+    http://YOUR-SERVER-IP:3000/ws-monitoring.html?token=XXXXXXXXXXXXXXXXXXXXXXXXXX&channel=global
+
+replace XXXXXXXXXXXXXXXXXXXXXXXXXX with the security token you have configured in appconfig.json
 
 
