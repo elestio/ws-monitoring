@@ -21,7 +21,9 @@ Features:
 
 if you are on Node 10, you can activate multi-threading by executing this in your terminal:
 
-    export NODE_OPTIONS=--experimental-worker
+```bash
+export NODE_OPTIONS=--experimental-worker
+```
 
 
 ## Install Node.js 12
