@@ -1,0 +1,29 @@
+{
+  "name": "@elestio/ws-monitoring",
+  "version": "1.0.5",
+  "description": "Lightweight websocket real-time monitoring",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js -p 3000 --oc 1"
+  },
+  "bin": "index.js",
+  "pkg": {
+    "scripts": "/API/**/*.js",
+    "assets": [
+      "/*.*",
+      "/public/**/*"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elestio/ws-monitoring.git"
+  },
+  "author": "elestio",
+  "bugs": {
+    "url": "https://github.com/elestio/ws-monitoring/issues"
+  },
+  "homepage": "https://github.com/elestio/ws-monitoring#readme",
+  "dependencies": {
+    "@elestio/cloudgate": "^1.0.99"
+  }
+}
