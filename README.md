@@ -16,7 +16,7 @@ Features:
 ## Quickstart for Linux (Binary version)
 ### Linux one line installer: stable binary (no requirements, recommended)
 
-    wget -O - https://github.com/elestio/ws-monitoring/raw/main/binaries/install.sh | bash
+    wget -O - https://github.com/elestio/ws-monitoring/raw/master/binaries/install.sh | bash
 
 Then you can run it with this command: 
 

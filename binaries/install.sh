@@ -1,1 +1,1 @@
-wget -c https://github.com/elestio/ws-monitoring/raw/main/binaries/ws-monitoring-linux.tar.gz && tar -xzf ws-monitoring-linux.tar.gz -C /bin && rm ws-monitoring-linux.tar.gz
+wget -c https://github.com/elestio/ws-monitoring/raw/master/binaries/ws-monitoring-linux.tar.gz && tar -xzf ws-monitoring-linux.tar.gz -C /bin && rm ws-monitoring-linux.tar.gz
