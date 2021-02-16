@@ -1,6 +1,6 @@
 {
   "name": "@elestio/ws-monitoring",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lightweight websocket real-time monitoring",
   "main": "index.js",
   "scripts": {
