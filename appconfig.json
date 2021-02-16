@@ -9,6 +9,7 @@
   "TypeFS": "LOCAL",
   "redirect404toIndex": false,
   "HSTS": false,
+  "logTailLines": 200,
   "maxRequestsPerMinutePerIP": 100,
   "CORS": {
       "access-control-allow-origin": "*"

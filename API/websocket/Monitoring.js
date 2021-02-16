@@ -11,7 +11,19 @@ var sharedmem = null;
 var curApp = null;
 var curChannel = null; //TODO: improve, only 1 channel for now
 
+var logTailLines = 200;
+
 exports.open = (event, context, callback) => {
+
+    var appConfig = context.appConfig;
+
+    //configure nb of lines to return initially in tail
+    if ( appConfig.logTailLines != null ){
+        try{
+            logTailLines = appConfig.logTailLines;
+        }catch(ex){
+        }
+    }
 
     sharedmem = context.sharedmem;
     curApp = event.app;
@@ -138,14 +150,15 @@ exports.message = async (event, context, callback) => {
                 }
             });
 
+
             //initial content
             var lines = fs.readFileSync(filename, 'utf8');
             var linesArray = lines.split('\n');
-            var last200LinesArray = linesArray.slice(Math.max(linesArray.length - 200, 0))
+            var last200LinesArray = linesArray.slice(Math.max(linesArray.length - logTailLines, 0))
             var reversedArray = last200LinesArray.reverse();
             reversedArray.push("");
             reversedArray.push("--------------------------------------------");
-            reversedArray.push("Last 200 lines of: " + filename);
+            reversedArray.push("Last " + logTailLines + " lines of: " + filename);
             
             
             SendLogInformations(event.ws, filename, reversedArray.join('\n'));
