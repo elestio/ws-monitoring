@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/elestio/ws-monitoring#readme",
   "dependencies": {
-    "@elestio/cloudgate": "^1.0.99"
+    "@elestio/cloudgate": "^1.0.101"
   }
 }

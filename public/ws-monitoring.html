@@ -672,7 +672,7 @@
                                 document.getElementById('processing').innerHTML = "P: " + parseFloat(msg.processing.replace("ms", "")).toFixed(0) + "ms";
                                 //document.getElementById('variance').innerHTML = "V: " + (1000 - ((+ new Date()) - lastDynamicMessage))   + "ms";
                                 
-                                document.getElementById('currentload').innerHTML = msg.currentLoad.currentload.toFixed(2) + " %";
+                                document.getElementById('currentload').innerHTML = msg.currentLoad.currentLoad.toFixed(2) + " %";
                                 //vcores
                                 var cpus = msg.currentLoad.cpus;
                                 var allCores = "";
@@ -1019,7 +1019,7 @@
             var nbMeasures = 60;
             var dataCache = {};
             var activatedGraphs = {
-                "sparklineCPU": "msg.currentLoad.currentload"
+                "sparklineCPU": "msg.currentLoad.currentLoad"
             };
             function LoadSparkline(selector, name, data){
 
