@@ -974,8 +974,8 @@
                         result +="  <div class='doItem name' style='width:150px;' title=\"" + curItem.name + "\">" + curItem.name + "</div>";
                         result +="  <div class='doItem image' style='width:250px;' title=\"" + curItem.image + "\">" + curItem.image + "</div>";
                         result +="  <div class='doItem created' style='width:200px;'>" + curItem.createdAt.split('.')[0] + "</div>";
-                        result +="  <div class='doItem cpuUsage'>" + (curItem.cpu_percent).toFixed(2) + "%</div>";
-                        result +="  <div class='doItem memUsage'>" + formatMB(curItem.mem_usage).toFixed(2) + "MB</div>";
+                        result +="  <div class='doItem cpuUsage'>" + (curItem.cpuPercent).toFixed(2) + "%</div>";
+                        result +="  <div class='doItem memUsage'>" + formatMB(curItem.memUsage).toFixed(2) + "MB</div>";
                         
                         if ( curItem.ports.length > 0 ){
                             var mainPort = curItem.ports[0];
