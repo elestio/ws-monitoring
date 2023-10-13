@@ -1,19 +1,28 @@
-# ws-monitoring
-A simple & lightweight realtime monitoring web UI + server in Node.js
+# ws-monitoring 🚀
 
-![ws-monitoring animated gif](https://cdn.terasp.net/CDN/ws-monitoring-4.gif "ws-monitoring")
+A simple & lightweight real-time monitoring web UI + server in Node.js
 
-Features:
- - Super light real time monitoring tool, Small CPU/RAM Usage
- - Monitor core metrics + Connections/Processes/Services/Docker/Logs
- - Easy to run once or as a service
- - Click on tiles to enable or disable graphing for a metric
- - Responsive design & Embeddable, easy to modify and customize
- - Websocket API available
+## Features ✨
 
-&nbsp;
+- Super light real-time monitoring tool, Small CPU/RAM Usage 🌟
+- Monitor core metrics + Connections/Processes/Services/Docker/Logs 📊
+- Easy to run once or as a service 🏃
+- Click on tiles to enable or disable graphing for a metric 📈
+- Responsive design & Embeddable, easy to modify and customize 🎨
+- Websocket API available 🌐
 
-## Quickstart for Linux (Binary version)
+## Quickstart for Linux (Binary version) 🐧
+
+Linux one-line installer for the stable binary version (no requirements, recommended):
+
+```bash
+Then you can run it with this command:
+
+bash
+Copy code
+token=MyRandomString ws-monitoring
+This version includes Node.js V14 and all the dependencies in the binary, so it can run on any Linux x64 without requirements.
+wget -O - https://github.com/elestio/ws-monitoring/raw/master/binaries/install.sh | bash
 ### Linux one line installer: stable binary (no requirements, recommended)
 
     wget -O - https://github.com/elestio/ws-monitoring/raw/master/binaries/install.sh | bash
@@ -28,13 +37,10 @@ Then you can run it with this command:
 &nbsp;
 
 
-# Requirements
-
-- Linux, Windows or Mac OS
-- Node 10+ for single-threaded mode, Node 12+ for multi-threaded mode
-
-if you are on Node 10, you can activate multi-threading by executing this in your terminal:
-
+Requirements 📝
+Linux, Windows, or Mac OS 💻
+Node 10+ for single-threaded mode, Node 12+ for multi-threaded mode 🚀
+If you are on Node 10, you can activate multi-threading by executing this in your terminal:
 ```bash
 export NODE_OPTIONS=--experimental-worker
 ```
@@ -53,7 +59,7 @@ export NODE_OPTIONS=--experimental-worker
     sudo yum -y install nodejs npm git
 
 
-## Clone this repository
+## Clone this repository 🚀
 Clone this repo then install NPM dependencies for ws-monitoring:
 
     git clone https://github.com/elestio/ws-monitoring.git
@@ -87,9 +93,9 @@ Eg to run ws-monitoring with a security token passed as env variable:
 
     token=123456789 ./run.sh
 
-# Run ws-monitoring
+ Run 🔥 ws-monitoring
 
-## Run directly
+##  Run 🔥 directly
 
 Finally we can start WS-MONITORING Server one-time:
     
@@ -102,7 +108,95 @@ or run as a service with pm2
     pm2 save
 
 
-# Quickstart with Docker
+
+Sure, I've added some emojis to make the README more engaging and visually appealing:
+
+markdown
+Copy code
+# ws-monitoring 🚀
+
+A simple & lightweight real-time monitoring web UI + server in Node.js
+
+## Features ✨
+
+- Super light real-time monitoring tool, Small CPU/RAM Usage 🌟
+- Monitor core metrics + Connections/Processes/Services/Docker/Logs 📊
+- Easy to run once or as a service 🏃
+- Click on tiles to enable or disable graphing for a metric 📈
+- Responsive design & Embeddable, easy to modify and customize 🎨
+- Websocket API available 🌐
+
+## Quickstart for Linux (Binary version) 🐧
+
+Linux one-line installer for the stable binary version (no requirements, recommended):
+
+```bash
+wget -O - https://github.com/elestio/ws-monitoring/raw/master/binaries/install.sh | bash
+Then you can run it with this command:
+
+bash
+Copy code
+token=MyRandomString ws-monitoring
+This version includes Node.js V14 and all the dependencies in the binary, so it can run on any Linux x64 without requirements.
+
+Requirements 📝
+Linux, Windows, or Mac OS 💻
+Node 10+ for single-threaded mode, Node 12+ for multi-threaded mode 🚀
+If you are on Node 10, you can activate multi-threading by executing this in your terminal:
+
+bash
+Copy code
+export NODE_OPTIONS=--experimental-worker
+Install Node.js 12, NPM, and GIT for Debian/Ubuntu or CentOS:
+
+bash
+Copy code
+# For Debian/Ubuntu
+sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt -y install nodejs npm git
+
+# For CentOS
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
+sudo yum -y update
+sudo yum -y install nodejs npm git
+How to Run 🔥
+Clone this repository:
+bash
+Copy code
+git clone https://github.com/elestio/ws-monitoring.git
+cd ws-monitoring
+npm install --ignore-scripts
+Configure a security token in appconfig.json (Mandatory step):
+To protect access to the dashboard, configure a security token (any random string) in appconfig.json:
+
+json
+Copy code
+"websocketEndpoints": {
+  "/monitoring" : {
+    "src" : "./API/websocket/",
+    "open": "Monitoring.open",
+    "message": "Monitoring.message",
+    "close": "Monitoring.close",
+    "token": "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+  }
+}
+Replace XXXXXXXXXXXXXXXXXXXXXXXXXX with any random string (like a guid). You can also pass the security token as an ENV variable.
+
+Run ws-monitoring directly:
+bash
+Copy code
+./run.sh
+Or run it as a service with pm2:
+
+bash
+Copy code
+npm install -g pm2
+pm2 start run.sh --name ws-monitoring
+pm2 save
+
+Quickstart with Docker 🐳
+Pull the Docker image and run it:
 
     docker pull elestio/ws-monitoring
     docker run -p 3000:3000 -e token=MyRandomString -v /var/run/docker.sock:/var/run/docker.sock -it elestio/ws-monitoring
@@ -124,7 +218,7 @@ Run as a docker service
 
     docker run --name ws-monitoring -d --restart always -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock:ro -v /var/log/:/var/log/:ro -it elestio/ws-monitoring
 
-## Run on Kubernetes
+Run on Kubernetes 🚢
 Run with helm
 
     helm upgrade --install ws-monitoring --namespace ws-monitoring helm/
@@ -137,8 +231,7 @@ Run with helm
 replace XXXXXXXXXXXXXXXXXXXXXXXXXX with the security token you have configured in appconfig.json
 
 &nbsp;
-
-# Websocket Usage in javascript
+Websocket Usage in JavaScript 🌐
 
     var shouldReconnect = true;
     var globalWS = null;
@@ -488,11 +581,10 @@ you can also send messages to get more detailed informations
 The output will be placed in `binaries` folder
 
 &nbsp;
+TODO List 📋
+Configurable data retention duration ⏱️
+Alert system (email + browser push) 🚨
+Plugin system with support for Progress 🧩
+Search/filters for processes/services/connection 🔍
+Feel free to adjust, add more emojis, and enhance the README further! 😄
 
-
-# TODO List
-- Configurable data retention duration
-- Alert system (email + browser push)
-- plugin system with support for Progress
-- search/filters for processes/services/connections
-- PWA
